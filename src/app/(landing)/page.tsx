@@ -1,12 +1,13 @@
 import { Check } from "lucide-react"
+import { Fragment } from "react"
 
-import Heading from "@/app/components/heading"
-import MaxWidthWrapper from "@/app/components/mas-width-wrapper"
-import ShinyButton from "@/app/components/shiny-button"
+import Heading from "@/components/heading"
+import MaxWidthWrapper from "@/components/mas-width-wrapper"
+import ShinyButton from "@/components/shiny-button"
 
 export default function Page() {
   return (
-    <>
+    <Fragment>
       <section className="relative bg-brand-25 py-24 sm:py-32">
         <MaxWidthWrapper className="text-center">
           <div className="relative mx-auto flex flex-col items-center gap-10 text-center">
@@ -56,6 +57,6 @@ export default function Page() {
       <section></section>
       <section></section>
       <section></section>
-    </>
+    </Fragment>
   )
 }

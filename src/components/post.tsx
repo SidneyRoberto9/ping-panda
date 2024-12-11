@@ -1,7 +1,9 @@
 "use client"
 
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { useState } from "react"
+
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+
 import { client } from "../lib/client"
 
 export const RecentPost = () => {
@@ -47,11 +49,11 @@ export const RecentPost = () => {
           placeholder="Enter a title..."
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-md outline outline-2 outline-brand-700 h-12 px-4 py-2 text-black"
+          className="h-12 w-full rounded-md px-4 py-2 text-black outline outline-2 outline-brand-700"
         />
         <button
           type="submit"
-          className="rounded-md h-12 px-10 py-3 bg-brand-700 text-brand-50 font-semibold transition hover:bg-brand-800"
+          className="h-12 rounded-md bg-brand-700 px-10 py-3 font-semibold text-brand-50 transition hover:bg-brand-800"
         >
           Submit
         </button>
