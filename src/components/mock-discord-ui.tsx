@@ -22,18 +22,18 @@ import Icons from "@/components/icons"
 
 const MockDiscordUI = ({ children }: PropsWithChildren) => {
   return (
-    <div className="bg-discord-background flex min-h-[800px] w-full max-w-[1200px] overflow-hidden rounded-lg text-white shadow-xl">
+    <div className="flex min-h-[800px] w-full max-w-[1200px] overflow-hidden rounded-lg bg-discord-background text-white shadow-xl">
       <div className="hidden w-[72px] flex-col items-center bg-[#202225] py-3 sm:flex">
-        <div className="bg-discord-brand-color mb-2 flex size-12 items-center justify-center rounded-2xl transition-all duration-200 hover:rounded-lg">
+        <div className="mb-2 flex size-12 items-center justify-center rounded-2xl bg-discord-brand-color transition-all duration-200 hover:rounded-lg">
           <Icons.discord className="size-3/5 text-white" />
         </div>
 
-        <div className="bg-discord-background my-2 h-[2px] w-8 rounded-full" />
+        <div className="my-2 h-[2px] w-8 rounded-full bg-discord-background" />
 
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="bg-discord-background hover:bg-discord-brand-color mb-3 flex size-12 cursor-not-allowed items-center justify-center rounded-3xl transition-all duration-200 hover:rounded-xl"
+            className="mb-3 flex size-12 cursor-not-allowed items-center justify-center rounded-3xl bg-discord-background transition-all duration-200 hover:rounded-xl hover:bg-discord-brand-color"
           >
             <span className="text-lg font-semibold text-gray-400">
               {String.fromCharCode(65 + i)}
@@ -41,7 +41,7 @@ const MockDiscordUI = ({ children }: PropsWithChildren) => {
           </div>
         ))}
 
-        <div className="bg-discord-background group mb-3 mt-auto flex size-12 cursor-not-allowed items-center justify-center rounded-3xl transition-all duration-200 hover:rounded-xl hover:bg-[#3ba55c]">
+        <div className="group mb-3 mt-auto flex size-12 cursor-not-allowed items-center justify-center rounded-3xl bg-discord-background transition-all duration-200 hover:rounded-xl hover:bg-[#3ba55c]">
           <PlusCircle className="text-[#3ba55c] group-hover:text-white" />
         </div>
       </div>
@@ -86,7 +86,7 @@ const MockDiscordUI = ({ children }: PropsWithChildren) => {
                   key={i}
                   className="flex cursor-not-allowed items-center rounded px-2 py-1.5 text-gray-600"
                 >
-                  <div className="bg-discord-background mr-3 size-8 rounded-full" />
+                  <div className="mr-3 size-8 rounded-full bg-discord-background" />
                   <span className="font-medium">User {i + 1}</span>
                 </div>
               ))}
@@ -113,7 +113,7 @@ const MockDiscordUI = ({ children }: PropsWithChildren) => {
 
       <div className="flex flex-1 flex-col">
         <div className="flex h-16 items-center border-b border-[#202225] bg-[#36393f] px-4 shadow-sm">
-          <div className="mr-4 hidden md:block">
+          <div className="mr-4 md:hidden">
             <Menu className="size-6 cursor-pointer text-[#b9bbbe] hover:text-white" />
           </div>
 
@@ -143,7 +143,7 @@ const MockDiscordUI = ({ children }: PropsWithChildren) => {
           </div>
         </div>
 
-        <div className="bg-discord-background flex flex-1 flex-col-reverse overflow-y-auto p-4">
+        <div className="flex flex-1 flex-col-reverse overflow-y-auto bg-discord-background p-4">
           {children}
         </div>
 

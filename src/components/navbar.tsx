@@ -22,7 +22,7 @@ const Navbar = () => {
               <Fragment>
                 <SignOutButton>
                   <Button size="sm" variant="ghost">
-                    Sign out
+                    Sign Out
                   </Button>
                 </SignOutButton>
 
@@ -55,7 +55,7 @@ const Navbar = () => {
                     variant: "ghost",
                   })}
                 >
-                  Sign in
+                  Sign In
                 </Link>
 
                 <div className="h-8 w-px bg-gray-200" />
@@ -67,7 +67,7 @@ const Navbar = () => {
                     className: "flex items-center gap-1.5",
                   })}
                 >
-                  Sign up <ArrowRight className="size-4" />
+                  Sign Up <ArrowRight className="size-4" />
                 </Link>
               </Fragment>
             )}

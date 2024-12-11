@@ -63,12 +63,12 @@ const DiscordMessage = ({
         </div>
 
         <div className="mb-4 mt-1.5 w-full rounded bg-[#2f3136] p-3 text-sm">
-          <div className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <div className="mb-2 flex flex-row items-center justify-between">
             {badgeText ? (
               <span
                 className={cn(
                   "order-2 inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset",
-                  getBadgeStyles("#faa61a")
+                  getBadgeStyles(badgeColor)
                 )}
               >
                 {badgeText}
