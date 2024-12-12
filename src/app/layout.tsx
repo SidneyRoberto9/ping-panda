@@ -25,8 +25,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <ClerkProvider>
       <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
-        <body className="bg-brand-50 font-sans text-brand-950 antialiased">
-          <Providers>{children}</Providers>
+        <body className="flex min-h-[calc(100vh-1px)] flex-col bg-brand-50 font-sans text-brand-950 antialiased">
+          <main className="relative flex flex-1 flex-col">
+            <Providers>{children}</Providers>
+          </main>
         </body>
       </html>
     </ClerkProvider>
