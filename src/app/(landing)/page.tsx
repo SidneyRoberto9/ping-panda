@@ -1,4 +1,4 @@
-import { Check } from "lucide-react"
+import { Check, Star } from "lucide-react"
 import Image from "next/image"
 import { Fragment } from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
@@ -6,6 +6,7 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 
 import DiscordMessage from "@/components/discord-message"
 import Heading from "@/components/heading"
+import Icons from "@/components/icons"
 import MaxWidthWrapper from "@/components/mas-width-wrapper"
 import MockDiscordUI from "@/components/mock-discord-ui"
 import ShinyButton from "@/components/shiny-button"
@@ -283,7 +284,90 @@ export default function Page() {
         </MaxWidthWrapper>
       </section>
 
-      <section></section>
+      <section className="sm:py-34 relative bg-white py-24">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
+          <div>
+            <h2 className="text-center text-base/7 font-semibold text-brand-600">
+              Real-World Experiences
+            </h2>
+            <Heading className="text-center">What out customers say</Heading>
+          </div>
+
+          <div className="mx-auto grid max-w-2xl grid-cols-1 divide-y divide-gray-200 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+            <div className="flex flex-auto flex-col gap-4 rounded-t-[2rem] bg-brand-25 p-6 sm:p-8 lg:rounded-l-[2rem] lg:rounded-tr-none lg:p-16">
+              <div className="mb-2 flex justify-center gap-0.5 lg:justify-start">
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+              </div>
+
+              <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
+                PingPanda has been a game-changer for me. I've bee using it for
+                two months now and seeing sales pop up in real-time is super
+                satisfying.
+              </p>
+
+              <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-center lg:justify-start">
+                <Image
+                  src="/user-2.png"
+                  alt="Random user"
+                  className="rounded-full object-cover"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="flex items-center font-semibold">
+                    Freya Larsson
+                    <Icons.verificationBadge className="ml-1.5 inline-block size-4" />
+                  </p>
+                  <p className="text-sm text-gray-600">@itsfreya</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-auto flex-col gap-4 rounded-b-[2rem] bg-brand-25 p-6 sm:p-8 lg:rounded-r-[2rem] lg:rounded-bl-none lg:p-16">
+              <div className="mb-2 flex justify-center gap-0.5 lg:justify-start">
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+                <Star className="size-5 fill-blue-500 text-brand-500" />
+              </div>
+
+              <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
+                PingPanda's been paying off for our SaaS. Nice to have simple
+                way to see how we're doing day-to-day. Definitely makes our
+                lives easier.
+              </p>
+
+              <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-center lg:justify-start">
+                <Image
+                  src="/user-1.png"
+                  alt="Random user"
+                  className="rounded-full object-cover"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="flex items-center font-semibold">
+                    Kai Durant
+                    <Icons.verificationBadge className="ml-1.5 inline-block size-4" />
+                  </p>
+                  <p className="text-sm text-gray-600">@kdurant_</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ShinyButton
+            href="/sign-up"
+            className="relative z-10 h-14 w-full max-w-xs text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            Start For Free Today
+          </ShinyButton>
+        </MaxWidthWrapper>
+      </section>
     </Fragment>
   )
 }
