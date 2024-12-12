@@ -28,7 +28,7 @@ export default async function Page() {
       <DashboardPage
         cta={
           <CreateEventCategoryModal>
-            <Button>
+            <Button className="w-full sm:w-fit">
               <PlusIcon className="mr-2 size-4" />
               Add Category
             </Button>

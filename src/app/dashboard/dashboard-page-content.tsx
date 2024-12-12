@@ -5,6 +5,7 @@ import { ArrowRight, BarChart2, Clock, Database, Trash2 } from "lucide-react"
 import Link from "next/link"
 import { Fragment, useState } from "react"
 
+import DashboardEmptyState from "@/app/dashboard/dashboard-empty-state"
 import LoadingSpinner from "@/components/loading-spinner"
 import { Button, buttonVariants } from "@/components/ui/button"
 import Modal from "@/components/ui/modal"
@@ -47,7 +48,7 @@ const DashboardPageContent = () => {
   }
 
   if (!categories || categories.length === 0) {
-    return <div> empty state</div>
+    return <DashboardEmptyState />
   }
 
   return (
