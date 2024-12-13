@@ -8,7 +8,7 @@ import { SignOutButton } from "@clerk/nextjs"
 import { auth as currentAuth } from "@clerk/nextjs/server"
 
 const Navbar = async () => {
-  const userId = await currentAuth()
+  const { userId } = await currentAuth()
 
   return (
     <nav className="sticky inset-x-0 top-0 z-[100] h-16 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg transition-all">
