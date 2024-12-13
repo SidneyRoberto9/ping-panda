@@ -90,7 +90,7 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       stripe:
-        specifier: ^17.2.0
+        specifier: ^17.4.0
         version: 17.4.0
       superjson:
         specifier: ^2.2.1
