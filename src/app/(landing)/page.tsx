@@ -13,18 +13,18 @@ import ShinyButton from "@/components/shiny-button"
 import { AnimatedList, AnimatedListItem } from "@/components/ui/animated-list"
 
 export default function Page() {
-  const codeSnippet = `await fetch("http://localhost:3000/api/v1/events", {
-  method: "POST",
+  const codeSnippet = `await fetch('${process.env.NEXT_PUBLIC_APP_URL}/api/v1/events', {
+  method: 'POST',
   body: JSON.stringify({
-    category: "sale",
+    category: 'sale',
     fields: {
-      plan: "PRO",
-      email: "zoe.martinez2001@email.com",
+      plan: 'PRO',
+      email: 'zoe.martinez2001@email.com',
       amount: 49.00
     }
   }),
   headers: {
-    Authorization: "Bearer <YOUR_API_KEY>"
+    Authorization: 'Bearer <YOUR_API_KEY>'
   }
 })`
 

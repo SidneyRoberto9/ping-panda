@@ -35,7 +35,7 @@ const EmptyCategoryState = ({ categoryName }: EmptyCategoryStateProps) => {
     if (hasEvents) router.refresh()
   }, [hasEvents, router])
 
-  const codeSnippet = `await fetch('http://localhost:3000/api/events', {
+  const codeSnippet = `await fetch('${process.env.NEXT_PUBLIC_APP_URL}/api/events', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY'
