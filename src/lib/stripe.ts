@@ -5,6 +5,12 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", {
   typescript: true,
 })
 
+if (!process.env.STRIPE_SECRET_KEY) {
+  throw new Error(
+    "STRIPE_SECRET_KEY is not defined. Check your environment variables."
+  )
+}
+
 interface CreateCheckOutSessionParams {
   userEmail: string
   userId: string
