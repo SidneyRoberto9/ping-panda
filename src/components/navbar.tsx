@@ -40,7 +40,7 @@ const Navbar = async () => {
             ) : (
               <Fragment>
                 <Link
-                  href="/dashboard"
+                  href="/pricing"
                   className={buttonVariants({
                     size: "sm",
                     variant: "ghost",

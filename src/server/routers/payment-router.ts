@@ -13,6 +13,10 @@ const paymentRouter = router({
 
     return c.json({ url: session.url })
   }),
+
+  getUserPlan: privateProcedure.query(async ({ c, ctx }) =>
+    c.json({ plan: ctx.user.plan })
+  ),
 })
 
 export default paymentRouter
