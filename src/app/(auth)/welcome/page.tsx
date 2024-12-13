@@ -11,6 +11,7 @@ import { useQuery } from "@tanstack/react-query"
 
 export default function Page() {
   const router = useRouter()
+
   const { data } = useQuery({
     queryFn: async () => {
       const res = await client.auth.getDatabaseSyncStatus.$get()

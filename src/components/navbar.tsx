@@ -5,10 +5,10 @@ import { Fragment } from "react"
 import MaxWidthWrapper from "@/components/mas-width-wrapper"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { SignOutButton } from "@clerk/nextjs"
-import { currentUser } from "@clerk/nextjs/server"
+import { auth as currentAuth } from "@clerk/nextjs/server"
 
 const Navbar = async () => {
-  const user = await currentUser()
+  const userId = await currentAuth()
 
   return (
     <nav className="sticky inset-x-0 top-0 z-[100] h-16 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg transition-all">
@@ -19,7 +19,7 @@ const Navbar = async () => {
           </Link>
 
           <div className="flex h-full items-center space-x-4">
-            {user ? (
+            {userId ? (
               <Fragment>
                 <SignOutButton>
                   <Button size="sm" variant="ghost">

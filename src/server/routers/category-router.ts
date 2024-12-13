@@ -1,4 +1,4 @@
-import { startOfMonth } from "date-fns"
+import { startOfDay, startOfMonth, startOfWeek } from "date-fns"
 import { HTTPException } from "hono/http-exception"
 import { z } from "zod"
 
@@ -116,9 +116,9 @@ const categoryRouter = router({
 
     const categories = await db.eventCategory.createMany({
       data: [
-        { name: "Bug", emoji: "🐛", color: 0xff6b6b },
-        { name: "Sale", emoji: "💰", color: 0xffeb3b },
-        { name: "Question", emoji: "🤔", color: 0x6c5ce7 },
+        { name: "bug", emoji: "🐛", color: 0xff6b6b },
+        { name: "sale", emoji: "💰", color: 0xffeb3b },
+        { name: "question", emoji: "🤔", color: 0x6c5ce7 },
       ].map((category) => ({
         ...category,
         userId: user.id,
@@ -147,6 +147,77 @@ const categoryRouter = router({
       const hasEvents = category._count.events > 0
 
       return c.json({ hasEvents })
+    }),
+
+  getEventsByCategoryName: privateProcedure
+    .input(
+      z.object({
+        name: CATEGORY_NAME_VALIDATOR,
+        page: z.number(),
+        limit: z.number().max(50),
+        timeRange: z.enum(["today", "week", "month"]),
+      })
+    )
+    .query(async ({ c, ctx, input }) => {
+      const { name, page, limit, timeRange } = input
+      const { user } = ctx
+
+      const now = new Date()
+      let startDate: Date
+
+      switch (timeRange) {
+        case "today":
+          startDate = startOfDay(now)
+          break
+        case "week":
+          startDate = startOfWeek(now, { weekStartsOn: 0 })
+          break
+        case "month":
+          startDate = startOfMonth(now)
+          break
+      }
+
+      const [events, eventsCount, uniqueFieldCount] = await Promise.all([
+        db.event.findMany({
+          where: {
+            eventCategory: { name, userId: user.id },
+            createdAt: { gte: startDate },
+          },
+          orderBy: { createdAt: "desc" },
+          skip: (page - 1) * limit,
+          take: limit,
+        }),
+        db.event.count({
+          where: {
+            eventCategory: { name, userId: user.id },
+            createdAt: { gte: startDate },
+          },
+        }),
+        db.event
+          .findMany({
+            where: {
+              eventCategory: { name, userId: user.id },
+              createdAt: { gte: startDate },
+            },
+            select: { fields: true },
+            distinct: ["fields"],
+          })
+          .then((events) => {
+            const fieldNames = new Set<string>()
+            events.forEach((event) => {
+              Object.keys(event.fields as object).forEach((fieldName) => {
+                fieldNames.add(fieldName)
+              })
+            })
+            return fieldNames.size
+          }),
+      ])
+
+      return c.superjson({
+        events,
+        eventsCount,
+        uniqueFieldCount,
+      })
     }),
 })
 
