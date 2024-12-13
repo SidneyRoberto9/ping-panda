@@ -22,7 +22,7 @@ const APIKeySettingsPageContent = ({ apiKey }: APIKeySettingsPageContent) => {
   }
 
   return (
-    <Card className="w-full max-w-xl">
+    <Card className="w-full max-w-lg">
       <div>
         <Label>Your API Key</Label>
         <div className="relative mt-1">

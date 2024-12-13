@@ -1,6 +1,7 @@
 "use client"
 
 import { Menu, X } from "lucide-react"
+import Link from "next/link"
 import { PropsWithChildren, useState } from "react"
 
 import Sidebar from "@/components/sidebar"
@@ -17,9 +18,12 @@ const Layout = ({ children }: PropsWithChildren) => {
 
       <div className="flex flex-1 flex-col overflow-hidden">
         <div className="flex items-center justify-between border-b border-gray-200 p-4 md:hidden">
-          <p className="text-lg/7 font-semibold text-brand-900">
+          <Link
+            href="/"
+            className="cursor-pointer text-lg/7 font-semibold text-brand-900"
+          >
             Ping<span className="text-brand-700">Panda</span>
-          </p>
+          </Link>
           <button
             onClick={() => setIsDrawerOpen(true)}
             className="text-gray-500 hover:text-gray-600"
@@ -42,9 +46,12 @@ const Layout = ({ children }: PropsWithChildren) => {
           setShowModal={setIsDrawerOpen}
         >
           <div className="mb-4 flex items-center justify-between">
-            <p className="text-lg/7 font-semibold text-brand-900">
+            <Link
+              href="/"
+              className="cursor-pointer text-lg/7 font-semibold text-brand-900"
+            >
               Ping<span className="text-brand-700">Panda</span>
-            </p>
+            </Link>
             <button
               aria-label="Close modal"
               onClick={() => setIsDrawerOpen(false)}

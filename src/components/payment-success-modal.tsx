@@ -13,7 +13,7 @@ import { useQuery } from "@tanstack/react-query"
 const PaymentSuccessModal = () => {
   const router = useRouter()
 
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(true)
 
   const { data: currentPlan, isPending } = useQuery({
     queryKey: ["user-plan"],

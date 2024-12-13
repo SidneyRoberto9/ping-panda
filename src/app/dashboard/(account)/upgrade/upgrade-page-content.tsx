@@ -95,6 +95,7 @@ const UpgradePageContent = ({ plan }: UpgradePageContentProps) => {
             onClick={() => createCheckOutSession()}
             className="cursor-pointer text-brand-600 underline"
           >
+            <br />
             upgrade now to increase your limit &rarr;
           </span>
         ) : null}

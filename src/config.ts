@@ -8,4 +8,7 @@ const PRO_QUOTA = {
   maxEventCategories: 10,
 } as const
 
-export { FREE_QUOTA, PRO_QUOTA }
+const DISCORD_BOT_CONNECTION_URL =
+  "https://discord.com/oauth2/authorize?client_id=1316927566472544367"
+
+export { DISCORD_BOT_CONNECTION_URL, FREE_QUOTA, PRO_QUOTA }

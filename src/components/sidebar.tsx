@@ -45,9 +45,12 @@ const SIDEBAR_ITEMS: SidebarCategory[] = [
 const Sidebar = ({ onClose }: SidebarProps) => {
   return (
     <div className="relative z-20 flex h-full flex-col space-y-4 md:space-y-6">
-      <p className="hidden text-lg/7 font-semibold text-brand-900 sm:block">
+      <Link
+        href="/"
+        className="hidden cursor-pointer text-lg/7 font-semibold text-brand-900 sm:block"
+      >
         Ping<span className="text-brand-700">Panda</span>
-      </p>
+      </Link>
 
       <div className="flex-grow">
         <ul>
