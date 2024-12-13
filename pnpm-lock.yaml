@@ -90,8 +90,8 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       stripe:
-        specifier: ^17.4.0
-        version: 17.4.0
+        specifier: ^16.9.0
+        version: 16.12.0
       superjson:
         specifier: ^2.2.1
         version: 2.2.2
@@ -1893,8 +1893,8 @@ packages:
     resolution: {integrity: sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==}
     engines: {node: '>=12'}
 
-  stripe@17.4.0:
-    resolution: {integrity: sha512-sQQGZguPxe7/QYXJKtDpfzT2OAH9F8nyE2SOsVdTU793iiU33/dpaKgWaJEGJm8396Yy/6NvTLblgdHlueGLhA==}
+  stripe@16.12.0:
+    resolution: {integrity: sha512-H7eFVLDxeTNNSn4JTRfL2//LzCbDrMSZ+2q1c7CanVWgK2qIW5TwS+0V7N9KcKZZNpYh/uCqK0PyZh/2UsaAtQ==}
     engines: {node: '>=12.*'}
 
   styled-jsx@5.1.1:
@@ -3618,7 +3618,7 @@ snapshots:
     dependencies:
       ansi-regex: 6.1.0
 
-  stripe@17.4.0:
+  stripe@16.12.0:
     dependencies:
       '@types/node': 20.17.10
       qs: 6.13.1
