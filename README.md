@@ -1,7 +1,5 @@
-STAR THE REPO IF YOURE COOL
+## Ping Panda
 
-jStack - an opinionated stack to ship high-performance, low-cost Next.js apps inspired by the T3 stack.
+PingPanda is a powerful event monitoring SaaS that provides real-time insights and notifications. Built with Next.js, TypeScript, and Postgres, it offers instant alerts via Discord, secure authentication with Clerk, and easy payments through Stripe. Stay informed effortlessly with PingPanda!
 
-This is an early-stage stack so probably dont use in production yet. If you're wild enough to do so despite this warning, let me know your website URL so I can feature you lol
-
-documentation coming soon, for now just clone this repo, fill out the .env.example :))
+![Landing Page](.github/1440x1080.png "Landing Page")
